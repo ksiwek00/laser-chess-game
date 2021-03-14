@@ -1,0 +1,404 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0, 
+            "componentType" : 5123, 
+            "count" : 3288, 
+            "max" : [
+                2199
+            ], 
+            "min" : [
+                0
+            ], 
+            "type" : "SCALAR"
+        }, 
+        {
+            "bufferView" : 1, 
+            "componentType" : 5126, 
+            "count" : 2200, 
+            "max" : [
+                9.518288612365723, 
+                0.8202829360961914, 
+                8.741914749145508
+            ], 
+            "min" : [
+                -6.026891708374023, 
+                -16.85281753540039, 
+                -8.931184768676758
+            ], 
+            "type" : "VEC3"
+        }, 
+        {
+            "bufferView" : 2, 
+            "componentType" : 5126, 
+            "count" : 2200, 
+            "max" : [
+                1.0, 
+                1.0, 
+                0.9951847791671753
+            ], 
+            "min" : [
+                -1.0, 
+                -1.0, 
+                -0.9951848387718201
+            ], 
+            "type" : "VEC3"
+        }
+    ], 
+    "asset" : {
+        "generator" : "Soft8Soft Verge3D for Blender add-on", 
+        "version" : "2.0"
+    }, 
+    "bufferViews" : [
+        {
+            "buffer" : 0, 
+            "byteLength" : 6576, 
+            "byteOffset" : 0, 
+            "target" : 34963
+        }, 
+        {
+            "buffer" : 0, 
+            "byteLength" : 26400, 
+            "byteOffset" : 6576, 
+            "target" : 34962
+        }, 
+        {
+            "buffer" : 0, 
+            "byteLength" : 26400, 
+            "byteOffset" : 32976, 
+            "target" : 34962
+        }
+    ], 
+    "buffers" : [
+        {
+            "byteLength" : 59376, 
+            "uri" : "Laser-FINAL.bin"
+        }
+    ], 
+    "cameras" : [
+        {
+            "extensions" : {
+                "S8S_v3d_camera_data" : {
+                    "controls" : "ORBIT", 
+                    "enablePan" : true, 
+                    "moveSpeed" : 1, 
+                    "orbitMaxDistance" : 10000, 
+                    "orbitMaxPolarAngle" : 3.141592653589793, 
+                    "orbitMinDistance" : 0, 
+                    "orbitMinPolarAngle" : 0, 
+                    "orbitTarget" : [
+                        0.22203432023525238, 
+                        2.932845115661621, 
+                        -0.1532367765903473
+                    ], 
+                    "rotateSpeed" : 1, 
+                    "viewportFitInitialAspect" : 1, 
+                    "viewportFitType" : "VERTICAL"
+                }
+            }, 
+            "name" : "__DEFAULT__", 
+            "orthographic" : {
+                "xmag" : 8.095321582473375, 
+                "ymag" : 8.095321582473375, 
+                "zfar" : 1000.0, 
+                "znear" : -1000.0
+            }, 
+            "type" : "orthographic"
+        }
+    ], 
+    "extensions" : {
+        "S8S_v3d_data" : {
+            "lights" : [
+                {
+                    "color" : [
+                        0, 
+                        0, 
+                        0
+                    ], 
+                    "name" : "Ambient_Scene", 
+                    "profile" : "blender", 
+                    "type" : "ambient"
+                }
+            ]
+        }
+    }, 
+    "extensionsUsed" : [
+        "S8S_v3d_material_data", 
+        "S8S_v3d_camera_data", 
+        "S8S_v3d_data", 
+        "S8S_v3d_mesh_data", 
+        "S8S_v3d_node_data", 
+        "S8S_v3d_scene_data"
+    ], 
+    "materials" : [
+        {
+            "extensions" : {
+                "S8S_v3d_material_data" : {
+                    "nodeGraph" : {
+                        "edges" : [
+                            {
+                                "fromNode" : 0, 
+                                "fromOutput" : 0, 
+                                "toInput" : 0, 
+                                "toNode" : 1
+                            }
+                        ], 
+                        "nodes" : [
+                            {
+                                "inputs" : [
+                                    [
+                                        0.05087608844041824, 
+                                        0.05087608844041824, 
+                                        0.05087608844041824, 
+                                        1.0
+                                    ], 
+                                    1.0
+                                ], 
+                                "is_active_output" : false, 
+                                "name" : "Background", 
+                                "outputs" : [
+                                    [
+                                        0, 
+                                        0, 
+                                        0, 
+                                        0
+                                    ]
+                                ], 
+                                "type" : "BACKGROUND"
+                            }, 
+                            {
+                                "inputs" : [
+                                    [
+                                        0, 
+                                        0, 
+                                        0, 
+                                        0
+                                    ], 
+                                    [
+                                        0, 
+                                        0, 
+                                        0, 
+                                        0
+                                    ]
+                                ], 
+                                "is_active_output" : true, 
+                                "name" : "World Output", 
+                                "outputs" : [], 
+                                "type" : "OUTPUT_WORLD"
+                            }
+                        ]
+                    }
+                }
+            }, 
+            "name" : "Verge3D_Environment_World"
+        }, 
+        {
+            "extensions" : {
+                "S8S_v3d_material_data" : {
+                    "nodeGraph" : {
+                        "edges" : [
+                            {
+                                "fromNode" : 1, 
+                                "fromOutput" : 0, 
+                                "toInput" : 0, 
+                                "toNode" : 0
+                            }, 
+                            {
+                                "fromNode" : 1, 
+                                "fromOutput" : 1, 
+                                "toInput" : 1, 
+                                "toNode" : 0
+                            }
+                        ], 
+                        "nodes" : [
+                            {
+                                "inputs" : [
+                                    [
+                                        1, 
+                                        1, 
+                                        1, 
+                                        1
+                                    ], 
+                                    1
+                                ], 
+                                "is_active_output" : true, 
+                                "name" : "Output", 
+                                "outputs" : [], 
+                                "type" : "OUTPUT"
+                            }, 
+                            {
+                                "inputs" : [
+                                    [
+                                        0.800000011920929, 
+                                        0.800000011920929, 
+                                        0.800000011920929, 
+                                        1
+                                    ], 
+                                    [
+                                        1.0, 
+                                        1.0, 
+                                        1.0, 
+                                        1
+                                    ], 
+                                    0.800000011920929, 
+                                    [
+                                        0, 
+                                        0, 
+                                        0
+                                    ], 
+                                    [
+                                        0, 
+                                        0, 
+                                        0, 
+                                        0
+                                    ], 
+                                    1.0, 
+                                    0.0, 
+                                    1.0, 
+                                    0, 
+                                    1.0, 
+                                    0
+                                ], 
+                                "invertNormal" : false, 
+                                "is_active_output" : false, 
+                                "materialName" : "Material", 
+                                "name" : "Material", 
+                                "outputs" : [
+                                    [
+                                        0, 
+                                        0, 
+                                        0, 
+                                        0
+                                    ], 
+                                    0, 
+                                    [
+                                        0, 
+                                        0, 
+                                        0
+                                    ], 
+                                    [
+                                        0, 
+                                        0, 
+                                        0, 
+                                        0
+                                    ], 
+                                    [
+                                        0, 
+                                        0, 
+                                        0, 
+                                        0
+                                    ], 
+                                    [
+                                        0, 
+                                        0, 
+                                        0, 
+                                        0
+                                    ]
+                                ], 
+                                "specularHardness" : 50, 
+                                "specularIntensity" : 0.5, 
+                                "type" : "MATERIAL_EXT", 
+                                "useDiffuse" : true, 
+                                "useShadeless" : false, 
+                                "useSpecular" : true
+                            }
+                        ]
+                    }, 
+                    "useCastShadows" : false, 
+                    "useShadows" : false
+                }
+            }, 
+            "name" : "v3d_default_material"
+        }
+    ], 
+    "meshes" : [
+        {
+            "extensions" : {
+                "S8S_v3d_mesh_data" : {
+                    "colorLayers" : {}, 
+                    "uvLayers" : {}
+                }
+            }, 
+            "name" : "Cylinder", 
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2, 
+                        "POSITION" : 1
+                    }, 
+                    "indices" : 0, 
+                    "material" : 1, 
+                    "mode" : 4
+                }
+            ]
+        }
+    ], 
+    "nodes" : [
+        {
+            "extensions" : {
+                "S8S_v3d_node_data" : {
+                    "frustumCulling" : true, 
+                    "hidden" : false, 
+                    "renderOrder" : 0
+                }
+            }, 
+            "mesh" : 0, 
+            "name" : "Cylinder", 
+            "rotation" : [
+                -0.5000512003898621, 
+                0.5000511407852173, 
+                -0.49994879961013794, 
+                0.4999488592147827
+            ], 
+            "scale" : [
+                0.29464471340179443, 
+                0.29464468359947205, 
+                0.29464468359947205
+            ], 
+            "translation" : [
+                -1.9125699996948242, 
+                6.000129699707031, 
+                -0.2973969876766205
+            ]
+        }, 
+        {
+            "camera" : 0, 
+            "name" : "__DEFAULT_CAMERA__", 
+            "rotation" : [
+                -1.1433891700107779e-07, 
+                0.7071066498756409, 
+                -1.2101614821347084e-08, 
+                0.70710688829422
+            ], 
+            "scale" : [
+                0.9999998211860657, 
+                0.9999997615814209, 
+                0.9999997615814209
+            ], 
+            "translation" : [
+                9.076290130615234, 
+                2.932845115661621, 
+                -0.15323486924171448
+            ]
+        }
+    ], 
+    "scene" : 0, 
+    "scenes" : [
+        {
+            "extensions" : {
+                "S8S_v3d_scene_data" : {
+                    "light" : 0, 
+                    "worldMaterial" : 0
+                }
+            }, 
+            "extras" : {
+                "animFrameRate" : 24
+            }, 
+            "name" : "Scene", 
+            "nodes" : [
+                0, 
+                1
+            ]
+        }
+    ]
+}

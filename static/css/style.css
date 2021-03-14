@@ -1,0 +1,387 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: "Blanka", 'Gill Sans', 'Gill Sans MT', Calibri;
+    letter-spacing: 4px;
+    overflow: hidden;
+}
+
+input{
+  font-family: "Blanka", 'Gill Sans', 'Gill Sans MT', Calibri;
+}
+
+#overlay{
+    position: absolute;
+    /* background-color: black; */
+    background-image: url("/loading.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 1000;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+#infoscreen{
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  height: 100px;
+    z-index: 900;
+    width: 100%;
+    z-index: 100;
+}
+
+#infoscreen div{
+  display: inline-block;
+  min-height: 50px;
+  text-align: center;
+  width: 100%;
+  font-size: 40px;
+  line-height: 50px;
+  color: #ffffff;
+}
+
+#inner-overlay{
+    background:#000000 url("screen.png") no-repeat center center;
+    background-size: contain;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#inner-overlay h1, #inner-overlay input{
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+}
+#inner-overlay h1, #waiting-overlay h1{
+  display: inline-block;
+  font-size: 50px;
+    min-height: 50px;
+    color: #116466;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#waiting-overlay img{
+  margin-top: 100px;
+  opacity: 1;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  transition: opacity 1s;
+}
+
+#inner-overlay #login-textbox{
+    background-color: transparent;
+    border: 2px solid #116466;
+    border-radius: 10px;
+    color: white;
+    height: 50px;
+    width: 30%;
+    transition: transform .1s ease-in-out;
+}
+
+#turn{
+  transition: background-color .5s ease;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+#inner-overlay #login-button{
+  margin-top: 0;
+}
+
+#inner-overlay #choose-layout{
+  font-family: "Blanka", 'Gill Sans', 'Gill Sans MT', Calibri; 
+  letter-spacing: 1px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #116466;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  height: 50px;
+  width: 30%;
+}
+
+#inner-overlay #layout-label{
+  margin: 0 auto 20px auto;
+  text-align: center;
+  width: 40%;
+  color: white;
+}
+
+#inner-overlay input[type="text"]:focus{
+    transform: scale(1.05)
+}
+
+#inner-overlay input[type="button"], #play-again{
+    font-family: "Blanka", 'Gill Sans', 'Gill Sans MT', Calibri; 
+    background-color: #116466;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    color: white;
+    width: 30%;
+    height: 50px;
+    cursor: pointer;
+    transition: transform .1s ease-in-out
+}
+
+#inner-overlay input[type="button"]:hover, #play-again:hover{
+    transform: scale(1.05)
+}
+
+#inner-overlay input[type="button"]:active, #play-again:active{
+    transition: none;
+    transform: scale(1.02);
+    background-color: #116466;
+}
+
+#waiting-overlay{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+    display: none;
+    text-align: center;
+}
+
+#doors{
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  pointer-events: none;
+  z-index: 200;
+}
+
+#left-door{
+  position: absolute;
+  width: 50%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background:#000000 url("doorleft.png") no-repeat center center;
+  background-size: cover;
+  background-position: right center;
+  transition: all 3s ease-in-out;
+  pointer-events: initial;
+}
+#right-door{
+  position: absolute;
+  width: 50%;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  background:#000000 url("doorright.png") no-repeat center center;
+  background-size: cover;
+  background-position: left center;
+  transition: all 3s ease-in-out;
+  pointer-events: initial;
+}
+
+.swal-modal{
+  background-color: #116466
+
+}
+
+.swal-title, .swal-text{
+  color: #ffffff;
+}
+
+.swal-icon--success::before, .swal-icon--success::after, .swal-icon--success__hide-corners{
+  display: none;
+}
+
+#root{
+    z-index: 1;
+}
+
+/*font*/
+
+@font-face {
+  font-family: "Blanka";
+  src: url(blanka/Blanka-Regular.ttf) format("truetype");
+}
+
+/*loading*/
+
+@keyframes lds-ellipsis3 {
+  0%, 25% {
+    left: 32px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  50% {
+    left: 32px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  75% {
+    left: 100px;
+  }
+  100% {
+    left: 168px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes lds-ellipsis3 {
+  0%, 25% {
+    left: 32px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  50% {
+    left: 32px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  75% {
+    left: 100px;
+  }
+  100% {
+    left: 168px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  25%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}
+@-webkit-keyframes lds-ellipsis2 {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  25%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis {
+  0% {
+    left: 32px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  25% {
+    left: 32px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    left: 100px;
+  }
+  75% {
+    left: 168px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    left: 168px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}
+@-webkit-keyframes lds-ellipsis {
+  0% {
+    left: 32px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  25% {
+    left: 32px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    left: 100px;
+  }
+  75% {
+    left: 168px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    left: 168px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}
+.lds-css{
+    display: flex;
+    justify-content: center;
+}
+.lds-ellipsis {
+  position: relative;
+}
+.lds-ellipsis > div {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+}
+.lds-ellipsis div > div {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f00;
+  position: absolute;
+  top: 100px;
+  left: 32px;
+  -webkit-animation: lds-ellipsis 1s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards;
+  animation: lds-ellipsis 1s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards;
+}
+.lds-ellipsis div:nth-child(1) div {
+  -webkit-animation: lds-ellipsis2 1s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards;
+  animation: lds-ellipsis2 1s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards;
+  background: #116466;
+}
+.lds-ellipsis div:nth-child(2) div {
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+  background: #116466;
+}
+.lds-ellipsis div:nth-child(3) div {
+  -webkit-animation-delay: -0.25s;
+  animation-delay: -0.25s;
+  background: #116466;
+}
+.lds-ellipsis div:nth-child(4) div {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  background: #116466;
+}
+.lds-ellipsis div:nth-child(5) div {
+  -webkit-animation: lds-ellipsis3 1s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards;
+  animation: lds-ellipsis3 1s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards;
+  background: #116466;
+}
+.lds-ellipsis {
+  width: 200px !important;
+  height: 200px !important;
+  -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+  transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+}
